@@ -1,0 +1,106 @@
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+
+
+}
+
+.brandSingle {
+    width: 174px;
+    height: 62px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.brandSingle__box {
+    display: flex;
+    width: 83%;
+    gap: 10px;
+    align-items: center;
+}
+
+.brandSingle:nth-child(2) .brandSingle__box p {
+    font-size: 13px;
+    transform: scale(1.1);
+}
+
+.brandSingle span {
+    border-radius: 50%;
+    background-color: rgb(241, 241, 241);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 50px;
+    color: rgb(177, 176, 176);
+    flex: 1;
+    transform: scale(0.7);
+}
+
+.brandSingle p {
+    font-size: 15px;
+    line-height: 20px;
+    flex: 2;
+}
+
+.brandSingle:nth-child(1):hover {
+    border: 1px solid rgb(234, 166, 26);
+    color: rgb(234, 166, 26);
+}
+
+.brandSingle:nth-child(1):hover span {
+    color: rgb(234, 166, 26);
+}
+
+.brandSingle:nth-child(2):hover {
+    border: 1px solid rgb(45, 196, 77);
+    color: rgb(45, 196, 77)
+}
+
+.brandSingle:nth-child(2):hover span {
+    color: rgb(45, 196, 77)
+}
+
+.brandSingle:nth-child(3):hover {
+    border: 1px solid rgb(255, 59, 66);
+    color: rgb(255, 59, 66)
+}
+
+.brandSingle:nth-child(3):hover span {
+    color: rgb(255, 59, 66)
+}
+
+.brandSingle:nth-child(4):hover {
+    border: 1px solid rgb(153, 102, 255);
+    color: rgb(153, 102, 255)
+}
+
+.brandSingle:nth-child(4):hover span {
+    color: rgb(153, 102, 255)
+}
+
+.brandSingle:nth-child(5):hover {
+    border: 1px solid rgb(102, 183, 255);
+    color: rgb(102, 183, 255)
+}
+
+.brandSingle:nth-child(5):hover span {
+    color: rgb(102, 183, 255)
+}
+
+.brandSingle:nth-child(6):hover {
+    border: 1px solid rgb(234, 166, 26);
+    color: rgb(234, 166, 26)
+}
+
+.brandSingle:nth-child(6):hover span {
+    color: rgb(234, 166, 26)
+}

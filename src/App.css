@@ -1,0 +1,8 @@
+.app {
+    overflow-x: hidden;
+}
+
+.axess {
+    margin: 30px auto;
+    display: flex;
+}
