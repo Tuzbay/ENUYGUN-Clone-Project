@@ -18,6 +18,7 @@ function App() {
       <Cities />
       <Blog />
       <Banner />
+      <hr />
       <Footer />
     </div>
   );

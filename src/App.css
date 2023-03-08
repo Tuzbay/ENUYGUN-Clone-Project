@@ -6,3 +6,8 @@
     margin: 30px auto;
     display: flex;
 }
+
+hr {
+    height: 3px;
+    background-color: #C2CAC8;
+}

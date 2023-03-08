@@ -1,9 +1,9 @@
  .footer {
-     /* height: 150px; */
      width: 75%;
      margin: 0 auto;
-     border-top: 3px solid #C2CAC8;
      color: black;
+     margin-top: 8px;
+     margin-bottom: 20px;
  }
 
  .footer__top {
@@ -38,5 +38,35 @@
  }
 
  .footer__bottom {
-     height: 100px;
+     height: min-content;
+     margin-top: 10px;
+     margin-bottom: 30px;
+     display: flex;
+     justify-content: flex-start;
+     gap: 30px;
+     margin-left: 16px;
+ }
+
+ .footer__bottom li {
+     padding: 4px 0;
+     font-size: 13px;
+ }
+
+ .footer__bottom ul {
+     width: max-content;
+ }
+
+ .copyright small {
+     padding-right: 40px;
+ }
+
+ .hr {
+     height: 1px;
+     margin-top: 6px;
+ }
+
+ .copyright__bottom {
+     display: flex;
+     justify-content: center;
+     margin-top: 6px;
  }
