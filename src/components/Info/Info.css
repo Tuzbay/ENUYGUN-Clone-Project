@@ -1,0 +1,73 @@
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+    width: 77%;
+
+}
+
+.info__left {
+    flex: 1;
+    border-right: 1px solid lightgray;
+    padding: 20px;
+    color: rgb(83, 96, 94);
+}
+
+.info__left h1 {
+
+    font-weight: 400;
+    font-size: 21.6px;
+}
+
+.info__left .count {
+    font-size: 35.2px;
+}
+
+.info__left .visiter {
+    font-size: 18px;
+}
+
+.info__middle {
+    flex: 2;
+    display: flex;
+    gap: 86px;
+    padding: 0 40px;
+}
+
+
+
+.info__right {
+    background: url('/public/images/promote-background-big.png');
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 30px;
+    color: rgb(83, 96, 94);
+}
+
+.p-gray {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.p-orange {
+    font-size: 16px;
+    color: rgb(234, 166, 26);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.btn-sendNow {
+    padding: 6px 30px;
+    background-color: white;
+    color: rgb(45, 196, 77);
+    font-weight: 600;
+    border: 1px solid rgb(45, 196, 77);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}

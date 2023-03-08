@@ -1,0 +1,25 @@
+.cities {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.cities__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(83, 96, 94);
+    margin-bottom: 6px;
+}
+
+.cities__desc {
+    font-size: 14px;
+    color: rgb(83, 96, 94);
+
+    margin-bottom: 14px;
+}
+
+.cities__single {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
