@@ -1,7 +1,9 @@
 import "./App.css";
+import Banner from "./components/Banner/Banner";
 import Blog from "./components/Blog/Blog";
 import Brand from "./components/Brand/Brand";
 import Cities from "./components/Cities/Cities";
+import Footer from "./components/Footer/Footer";
 import Info from "./components/Info/Info";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -15,6 +17,8 @@ function App() {
       <Info />
       <Cities />
       <Blog />
+      <Banner />
+      <Footer />
     </div>
   );
 }
