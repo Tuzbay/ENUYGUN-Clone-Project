@@ -1,4 +1,5 @@
 import "./App.css";
+import Blog from "./components/Blog/Blog";
 import Brand from "./components/Brand/Brand";
 import Cities from "./components/Cities/Cities";
 import Info from "./components/Info/Info";
@@ -13,6 +14,7 @@ function App() {
       <img className="axess" src="/images/axess-reklam-44988.jpeg" alt="" />
       <Info />
       <Cities />
+      <Blog />
     </div>
   );
 }

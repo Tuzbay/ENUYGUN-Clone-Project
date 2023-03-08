@@ -34,7 +34,19 @@
 
 .city__right-top p {
     display: flex;
+    cursor: pointer;
 }
+
+.city__right-top p:hover {
+    text-decoration: underline 1px;
+}
+
+.city__right-top p span {
+    display: flex;
+    cursor: pointer;
+}
+
+
 
 .city__right-bottom {
     width: 100%;
@@ -53,4 +65,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.city__right-bottom span:hover {
+    color: rgb(0, 75, 141);
+    text-decoration: underline 1px;
+}
+
+.city__right-topr {
+    display: flex;
 }

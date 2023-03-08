@@ -11,9 +11,12 @@ function City({ imageURL, name }) {
       <div className="city__right">
         <div className="city__right-top">
           <h3>{name}</h3>
-          <p>
-            Gezilecek Yerler <KeyboardArrowRightIcon />
-          </p>
+          <div className="city__right-topr">
+            <p>Gezilecek Yerler</p>
+            <span>
+              <KeyboardArrowRightIcon />
+            </span>
+          </div>
         </div>
         <div className="city__right-bottom">
           <span>Uçak</span>
