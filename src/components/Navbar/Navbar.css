@@ -66,7 +66,7 @@
 }
 
 
-/* ! */
+/* ! Login ! */
 
 .home {
     position: relative;
@@ -88,7 +88,8 @@
     gap: 20px;
 }
 
-.login input {
+.login input,
+.signUp__right input {
     width: calc(100% - 20px);
     height: 40px;
     font-size: 16px;
@@ -199,4 +200,152 @@ hr {
     position: absolute;
     bottom: 8px;
     right: 10px;
+}
+
+/* ! Sign Up ! */
+
+.signUp {
+    width: 840px;
+    height: 545px;
+    position: absolute;
+    background-color: white;
+    z-index: 60;
+    top: 10vh;
+    left: 22vw;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signUp__left {
+    flex: 2;
+    padding: 20px 40px;
+    color: rgb(83, 96, 94);
+    background-color: #f8faf9;
+}
+
+.signUp__right {
+    flex: 1.5;
+    color: rgb(83, 96, 94);
+    padding: 20px 40px;
+}
+
+.signUp__right h2 {
+    margin-bottom: 24px;
+}
+
+.signUp__right input {
+    margin-bottom: 20px;
+}
+
+.signUp__left img {
+    width: 200px;
+    object-fit: contain;
+    margin-left: -14px;
+}
+
+.signUp__left p {
+    color: rgb(83, 96, 94);
+}
+
+.signUp__left-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.signUp__left-list-item {
+    display: flex;
+    gap: 15px;
+}
+
+.signUp__left-list-item-desc p {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+}
+
+.signUp__left-bottom {
+    display: flex;
+    margin-top: 30px;
+    border: 1px solid black;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.signUp__left-bottom p {
+    font-size: 14px;
+    width: 92%;
+}
+
+.signUp__left-bottom button {
+    background-color: #112f41;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    height: 36px;
+    width: 136px;
+    border-radius: 6px;
+}
+
+.checkboxPart {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.chechbox {
+    width: 36px !important;
+    cursor: pointer;
+}
+
+.signUpPopup {
+    width: 100%;
+    height: 45px;
+    background-color: #2DC44D;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signUpPopup:hover {
+    background-color: #26b044;
+}
+
+.SignUpPopup {
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.signUp__bottom-desc p {
+    font-size: 13px;
+    margin-top: 30px;
+    color: rgb(114, 126, 124)
+}
+
+.bottomIf {
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.bottomIf p {
+    margin-top: 18px;
+    padding: 10px;
+}
+
+.bottomIf p:hover {
+    background-color: rgba(228, 228, 228, 0.753)
+}
+
+.signUpPassIcon {
+    top: 10px;
+}
+
+.signUpCoorp button {
+    cursor: pointer;
 }
