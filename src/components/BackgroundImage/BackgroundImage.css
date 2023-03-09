@@ -1,0 +1,15 @@
+.backgroundImage {
+    position: relative;
+}
+
+.backgroundImage img {
+    height: 475px;
+}
+
+.frontPart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 50px;
+}

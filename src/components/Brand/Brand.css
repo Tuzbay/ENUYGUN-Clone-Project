@@ -21,7 +21,7 @@
 
 .brandSingle__box {
     display: flex;
-    width: 83%;
+    max-width: 1124px;
     gap: 10px;
     align-items: center;
 }

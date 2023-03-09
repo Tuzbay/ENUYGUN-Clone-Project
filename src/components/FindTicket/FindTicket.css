@@ -1,0 +1,9 @@
+.findTicket {
+    width: 550px;
+    height: 280px;
+    background-color: white;
+    position: absolute;
+    bottom: 120px;
+    left: 380px;
+    border-radius: 10px;
+}
