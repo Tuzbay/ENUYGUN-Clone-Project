@@ -349,3 +349,78 @@ hr {
 .signUpCoorp button {
     cursor: pointer;
 }
+
+/* ! Language ! */
+
+.language {
+    width: 280px;
+    height: 400px;
+    position: absolute;
+    background-color: white;
+    z-index: 60;
+    top: 20vh;
+    left: 40vw;
+    border-radius: 4px;
+    color: rgb(114, 126, 124);
+    padding: 10px 20px;
+}
+
+.language p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.language__list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.language__image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.language__list-item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type=radio] {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.language__bottom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.language__bottom button {
+    padding: 12px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.language__bottom-cancel {
+    width: 60px;
+    height: 35px;
+
+}
+
+.language__bottom-confirm {
+    background-color: #2DC44D;
+    color: white;
+    width: 80px;
+    height: 35px;
+}

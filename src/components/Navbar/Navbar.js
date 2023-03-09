@@ -13,6 +13,9 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 function Navbar() {
   const [loginPopup, setLoginPopup] = useState(false);
   const [sigUpPopup, setSignUpPopup] = useState(false);
+  const [languagePopup, setLanguagePopup] = useState(false);
+  const [languageImg, setLanguageImg] = useState("/images/turkey.png");
+  const [lang, setLang] = useState("");
   const [passwordType, setPasswordType] = useState("Password");
   const [passwordInput, setPasswordInput] = useState("");
 
@@ -50,8 +53,13 @@ function Navbar() {
           <li className="navbar__right-list-item notification">
             <NotificationsNoneIcon />
           </li>
-          <li className="navbar__right-list-item ">
-            <img className="flag" src="/images/trflag.png" alt="" />
+          <li
+            className="navbar__right-list-item"
+            onClick={() => {
+              setLanguagePopup(true);
+            }}
+          >
+            <img className="flag" src={languageImg} alt="" />
             <KeyboardArrowDownIcon className="flagArrow" />
           </li>
           <li
@@ -252,6 +260,140 @@ function Navbar() {
                 setSignUpPopup(false);
               }}
             />
+          </div>
+        </div>
+      )}
+
+      {languagePopup && (
+        <div className="language">
+          <p>Ülke / Site</p>
+          <ul>
+            <li className="language__list-item">
+              <div className="language__list-item-left">
+                <img
+                  className="language__image"
+                  src="/images/turkey.png"
+                  alt=""
+                />
+                Enuygun.com <small>Türkçe</small>
+              </div>
+
+              <input
+                type="radio"
+                name="language"
+                value="/images/turkey.png"
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              />
+            </li>
+            <li className="language__list-item">
+              <div className="language__list-item-left">
+                <img className="language__image" src="/images/de.svg" alt="" />
+                Wingie.de <small>Deutsch</small>
+              </div>
+              <input
+                type="radio"
+                name="language"
+                value="/images/de.svg"
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              />
+            </li>
+            <li className="language__list-item">
+              <div className="language__list-item-left">
+                <img className="language__image" src="/images/gb.svg" alt="" />
+                Wingie.co.uk <small>English</small>
+              </div>
+              <input
+                type="radio"
+                name="language"
+                value="/images/gb.svg"
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              />
+            </li>
+            <li className="language__list-item">
+              <div className="language__list-item-left">
+                <img
+                  className="language__image"
+                  src="/images/world.svg"
+                  alt=""
+                />
+                Wingie.com <small>English</small>
+              </div>
+              <input
+                type="radio"
+                name="language"
+                value="/images/world.svg"
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              />
+            </li>
+            <li className="language__list-item">
+              <div className="language__list-item-left">
+                <img className="language__image" src="/images/es.svg" alt="" />
+                Wingie.es <small>Español</small>
+              </div>
+              <input
+                type="radio"
+                name="language"
+                value="/images/es.svg"
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              />
+            </li>
+            <li className="language__list-item">
+              <div className="language__list-item-left">
+                <img className="language__image" src="/images/ae.svg" alt="" />
+                Wingie.ae <small>العربية</small>
+              </div>
+              <input
+                type="radio"
+                name="language"
+                value="/images/ae.svg"
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              />
+            </li>
+            <li className="language__list-item">
+              <div className="language__list-item-left">
+                <img className="language__image" src="/images/ru.svg" alt="" />
+                ru.wingie.com <small>русский</small>
+              </div>
+              <input
+                type="radio"
+                name="language"
+                value="/images/ru.svg"
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              />
+            </li>
+          </ul>
+          <div className="language__bottom">
+            <button
+              className="language__bottom-cancel"
+              onClick={() => {
+                setLanguagePopup(false);
+              }}
+            >
+              İptal
+            </button>
+            <button
+              className="language__bottom-confirm"
+              onClick={() => {
+                setLanguagePopup(false);
+                setLanguageImg(lang);
+              }}
+            >
+              Uygula
+            </button>
           </div>
         </div>
       )}
