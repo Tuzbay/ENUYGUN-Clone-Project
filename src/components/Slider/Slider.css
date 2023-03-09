@@ -1,0 +1,45 @@
+.slider {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-color: rgb(0, 0, 0, 0.4);
+    bottom: 14vh;
+    right: 10vw;
+    border-radius: 4px;
+    padding: 20px 30px;
+}
+
+.slider h1 {
+    margin-bottom: 14px;
+}
+
+.slider p {
+    margin-top: 14px;
+    line-height: 24px;
+}
+
+.slider__bottom {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 18px;
+}
+
+.circle {
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 3px;
+    padding: 3px;
+}
+
+.fill {
+    background-color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .slider {
+        display: none;
+    }
+}
