@@ -13,7 +13,6 @@
 .cities__desc {
     font-size: 14px;
     color: rgb(83, 96, 94);
-
     margin-bottom: 14px;
 }
 
@@ -22,4 +21,45 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
     margin-bottom: 30px;
+}
+
+/* @media screen and (max-width: 1200px) {
+     .cities__single {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    } 
+
+    .cities {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+
+} */
+
+@media (max-width: 1200px) {
+    .cities {
+        max-width: 950px;
+    }
+}
+
+@media (max-width:1000px) {
+    .cities {
+        max-width: 700px;
+    }
+}
+
+@media (max-width:768px) {
+    .cities {
+        max-width: 520px;
+    }
+}
+
+@media (max-width:576px) {
+    .cities__single {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .cities {
+        margin: 0 10px;
+    }
 }

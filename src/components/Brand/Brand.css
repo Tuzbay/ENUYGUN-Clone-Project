@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
+    transition: .2s ease all;
 }
 
 .brandSingle__box {

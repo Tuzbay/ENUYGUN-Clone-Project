@@ -1,10 +1,10 @@
 .slider {
     position: absolute;
     width: 400px;
-    height: 250px;
+    height: 280px;
     background-color: rgb(0, 0, 0, 0.4);
-    bottom: 14vh;
-    right: 10vw;
+    bottom: 18%;
+    right: 17%;
     border-radius: 4px;
     padding: 20px 30px;
 }
@@ -32,6 +32,11 @@
     border: 1px solid white;
     margin: 3px;
     padding: 3px;
+    cursor: pointer;
+}
+
+.slider__bottom .MuiSvgIcon-root {
+    cursor: pointer;
 }
 
 .fill {

@@ -16,7 +16,7 @@ function Slider() {
       <div className="slider__bottom">
         <KeyboardArrowLeftIcon />
         <span className="circle fill"></span>
-        <span className="circle"></span>
+        <span className="circle" onClick={() => {}}></span>
         <span className="circle"></span>
         <span className="circle"></span>
         <span className="circle"></span>

@@ -82,127 +82,9 @@ function Navbar() {
       </div>
 
       {loginPopup && (
-        <div className="login">
-          <h2>Giriş Yap</h2>
-          <input type="email" placeholder="E-Posta" />
-          <div className="passwordInput">
-            <input
-              type={passwordType}
-              onChange={handlePasswordChange}
-              value={passwordInput}
-              placeholder="Şifre"
-            />
-            {passwordType === "password" ? (
-              <VisibilityIcon
-                className="passwordIcon"
-                onClick={togglePassword}
-              />
-            ) : (
-              <VisibilityOffIcon
-                className="passwordIcon"
-                onClick={togglePassword}
-              />
-            )}
-          </div>
-
-          <button>Giriş Yap</button>
-          <div className="signUpandForget">
-            <p>Üye Ol</p>
-            <p>Şifremi Unuttum</p>
-          </div>
-          <p className="or">veya</p>
-          <div className="logInPopup">
-            <div className="facebook">
-              <FacebookIcon />
-              Facebook ile giriş yap
-            </div>
-            <div className="google">
-              <GoogleIcon />
-              Google ile giriş yap
-            </div>
-          </div>
-          <CloseIcon
-            className="closeIcon"
-            onClick={() => {
-              setLoginPopup(false);
-            }}
-          />
-        </div>
-      )}
-
-      {sigUpPopup && (
-        <div className="signUp">
-          <div className="signUp__left">
-            <img
-              src="https://cdn2.enuygun.com/media/lib/uploads/image/logo-kaynagi-33816.jpeg"
-              alt="ENUYGUN"
-            />
-            <p>Tüm bilgileriniz elinizin altında!</p>
-            <ul className="signUp__left-list">
-              <li className="signUp__left-list-item">
-                <div>
-                  <CheckCircleOutlineIcon />
-                </div>
-                <div>
-                  <strong>Yolcu bilgilerinizi kaydedin</strong>
-                  <p>
-                    Kendinize ve sevdiklerinize ait bilgileri kaydedin, bilet ve
-                    rezervasyon işlemlerinizi çok daha hızlı halledin.
-                  </p>
-                </div>
-              </li>
-              <li className="signUp__left-list-item">
-                <div>
-                  <CheckCircleOutlineIcon />
-                </div>
-                <div>
-                  <strong>Ödemenizi kolayca yapın</strong>
-                  <p>
-                    Kredi kartı bilgilerinizi güvenle saklayın ve ödemenizi
-                    sadece saniyeler içinde yapın.
-                  </p>
-                </div>
-              </li>
-              <li className="signUp__left-list-item">
-                <div>
-                  <CheckCircleOutlineIcon />
-                </div>
-                <div>
-                  <strong>Tüm detaylar tek bir yerde</strong>
-                  <p>
-                    Rezervasyonlarınıza ve bilet bilgilerinize dilediğiniz zaman
-                    ulaşın.
-                  </p>
-                </div>
-              </li>
-              <li className="signUp__left-list-item">
-                <div>
-                  <CheckCircleOutlineIcon />
-                </div>
-                <div className="signUp__left-list-item-desc">
-                  <strong>Kredi kartı puanlarınızı kullanın</strong>
-                  <p>
-                    Kredi kartı puanlarınızı hesabınıza aktarın, biriken
-                    puanlarla uçak ya da otobüs biletinizi alın, otel
-                    rezervasyonunuzu yapın.
-                  </p>
-                </div>
-              </li>
-            </ul>
-            <div className="signUp__left-bottom">
-              <div>
-                <p>
-                  Profesyonellere özel kurumsal üyelik avantajlarından
-                  yararlanın...
-                </p>
-              </div>
-              <div className="signUpCoorp">
-                <button>Kurumsal Üye Ol</button>
-              </div>
-            </div>
-          </div>
-          <div className="signUp__right">
-            <h2>Enuygun'a Üye Ol</h2>
+        <div className="background">
+          <div className="login">
+            <h2>Giriş Yap</h2>
             <input type="email" placeholder="E-Posta" />
             <div className="passwordInput">
               <input
@@ -213,187 +95,338 @@ function Navbar() {
               />
               {passwordType === "password" ? (
                 <VisibilityIcon
-                  className="passwordIcon signUpPassIcon"
+                  className="passwordIcon"
                   onClick={togglePassword}
                 />
               ) : (
                 <VisibilityOffIcon
-                  className="passwordIcon signUpPassIcon"
+                  className="passwordIcon"
                   onClick={togglePassword}
                 />
               )}
             </div>
-            <div className="checkboxPart">
-              <input className="chechbox" type="checkbox" />
-              <span>
-                İndirimler ve kampanyalardan <strong>Rıza Metni</strong> Rıza
-                kapsamında haberdar olmak istiyorum.
-              </span>
+
+            <button>Giriş Yap</button>
+            <div className="signUpandForget">
+              <p>Üye Ol</p>
+              <p>Şifremi Unuttum</p>
             </div>
-            <button className="signUpPopup">Üye Ol</button>
-            <div className="logInPopup SignUpPopup">
-              <div className="facebook facebook-sign">
+            <p className="or">veya</p>
+            <div className="logInPopup">
+              <div className="facebook">
                 <FacebookIcon />
-                Facebook ile üye ol
+                Facebook ile giriş yap
               </div>
-              <div className="google google-sign">
+              <div className="google">
                 <GoogleIcon />
-                Google ile üye ol
+                Google ile giriş yap
               </div>
-            </div>
-            <div className="signUp__bottom-desc">
-              <p>
-                Kişisel verileriniz <strong>Aydınlatma Metni</strong> kapsamında
-                işleniyor. Üye olarak{" "}
-                <strong>Enuygun Kullanım Koşulları</strong>
-                'nı kabul ettiğinizi onaylamış olursunuz.
-              </p>
-            </div>
-            <div className="bottomIf">
-              <p>
-                Üyeliğin varsa <strong>Giriş Yap</strong>
-              </p>
             </div>
             <CloseIcon
               className="closeIcon"
               onClick={() => {
-                setSignUpPopup(false);
+                setLoginPopup(false);
               }}
             />
           </div>
         </div>
       )}
 
-      {languagePopup && (
-        <div className="language">
-          <p>Ülke / Site</p>
-          <ul>
-            <li className="language__list-item">
-              <div className="language__list-item-left">
-                <img
-                  className="language__image"
-                  src="/images/turkey.png"
-                  alt=""
-                />
-                Enuygun.com <small>Türkçe</small>
+      {sigUpPopup && (
+        <div className="background">
+          <div className="signUp">
+            <div className="signUp__left">
+              <img
+                src="https://cdn2.enuygun.com/media/lib/uploads/image/logo-kaynagi-33816.jpeg"
+                alt="ENUYGUN"
+              />
+              <p>Tüm bilgileriniz elinizin altında!</p>
+              <ul className="signUp__left-list">
+                <li className="signUp__left-list-item">
+                  <div>
+                    <CheckCircleOutlineIcon />
+                  </div>
+                  <div>
+                    <strong>Yolcu bilgilerinizi kaydedin</strong>
+                    <p>
+                      Kendinize ve sevdiklerinize ait bilgileri kaydedin, bilet
+                      ve rezervasyon işlemlerinizi çok daha hızlı halledin.
+                    </p>
+                  </div>
+                </li>
+                <li className="signUp__left-list-item">
+                  <div>
+                    <CheckCircleOutlineIcon />
+                  </div>
+                  <div>
+                    <strong>Ödemenizi kolayca yapın</strong>
+                    <p>
+                      Kredi kartı bilgilerinizi güvenle saklayın ve ödemenizi
+                      sadece saniyeler içinde yapın.
+                    </p>
+                  </div>
+                </li>
+                <li className="signUp__left-list-item">
+                  <div>
+                    <CheckCircleOutlineIcon />
+                  </div>
+                  <div>
+                    <strong>Tüm detaylar tek bir yerde</strong>
+                    <p>
+                      Rezervasyonlarınıza ve bilet bilgilerinize dilediğiniz
+                      zaman ulaşın.
+                    </p>
+                  </div>
+                </li>
+                <li className="signUp__left-list-item">
+                  <div>
+                    <CheckCircleOutlineIcon />
+                  </div>
+                  <div className="signUp__left-list-item-desc">
+                    <strong>Kredi kartı puanlarınızı kullanın</strong>
+                    <p>
+                      Kredi kartı puanlarınızı hesabınıza aktarın, biriken
+                      puanlarla uçak ya da otobüs biletinizi alın, otel
+                      rezervasyonunuzu yapın.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <div className="signUp__left-bottom">
+                <div>
+                  <p>
+                    Profesyonellere özel kurumsal üyelik avantajlarından
+                    yararlanın...
+                  </p>
+                </div>
+                <div className="signUpCoorp">
+                  <button>Kurumsal Üye Ol</button>
+                </div>
               </div>
+            </div>
+            <div className="signUp__right">
+              <h2>Enuygun'a Üye Ol</h2>
+              <input type="email" placeholder="E-Posta" />
+              <div className="passwordInput">
+                <input
+                  type={passwordType}
+                  onChange={handlePasswordChange}
+                  value={passwordInput}
+                  placeholder="Şifre"
+                />
+                {passwordType === "password" ? (
+                  <VisibilityIcon
+                    className="passwordIcon signUpPassIcon"
+                    onClick={togglePassword}
+                  />
+                ) : (
+                  <VisibilityOffIcon
+                    className="passwordIcon signUpPassIcon"
+                    onClick={togglePassword}
+                  />
+                )}
+              </div>
+              <div className="checkboxPart">
+                <input className="chechbox" type="checkbox" />
+                <span>
+                  İndirimler ve kampanyalardan <strong>Rıza Metni</strong> Rıza
+                  kapsamında haberdar olmak istiyorum.
+                </span>
+              </div>
+              <button className="signUpPopup">Üye Ol</button>
+              <div className="logInPopup SignUpPopup">
+                <div className="facebook facebook-sign">
+                  <FacebookIcon />
+                  Facebook ile üye ol
+                </div>
+                <div className="google google-sign">
+                  <GoogleIcon />
+                  Google ile üye ol
+                </div>
+              </div>
+              <div className="signUp__bottom-desc">
+                <p>
+                  Kişisel verileriniz <strong>Aydınlatma Metni</strong>{" "}
+                  kapsamında işleniyor. Üye olarak{" "}
+                  <strong>Enuygun Kullanım Koşulları</strong>
+                  'nı kabul ettiğinizi onaylamış olursunuz.
+                </p>
+              </div>
+              <div className="bottomIf">
+                <p>
+                  Üyeliğin varsa <strong>Giriş Yap</strong>
+                </p>
+              </div>
+              <CloseIcon
+                className="closeIcon"
+                onClick={() => {
+                  setSignUpPopup(false);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
-              <input
-                type="radio"
-                name="language"
-                value="/images/turkey.png"
-                onChange={(e) => {
-                  setLang(e.target.value);
-                }}
-              />
-            </li>
-            <li className="language__list-item">
-              <div className="language__list-item-left">
-                <img className="language__image" src="/images/de.svg" alt="" />
-                Wingie.de <small>Deutsch</small>
-              </div>
-              <input
-                type="radio"
-                name="language"
-                value="/images/de.svg"
-                onChange={(e) => {
-                  setLang(e.target.value);
-                }}
-              />
-            </li>
-            <li className="language__list-item">
-              <div className="language__list-item-left">
-                <img className="language__image" src="/images/gb.svg" alt="" />
-                Wingie.co.uk <small>English</small>
-              </div>
-              <input
-                type="radio"
-                name="language"
-                value="/images/gb.svg"
-                onChange={(e) => {
-                  setLang(e.target.value);
-                }}
-              />
-            </li>
-            <li className="language__list-item">
-              <div className="language__list-item-left">
-                <img
-                  className="language__image"
-                  src="/images/world.svg"
-                  alt=""
+      {languagePopup && (
+        <div className="background">
+          <div className="language">
+            <p>Ülke / Site</p>
+            <ul>
+              <li className="language__list-item">
+                <div className="language__list-item-left">
+                  <img
+                    className="language__image"
+                    src="/images/turkey.png"
+                    alt=""
+                  />
+                  Enuygun.com <small>Türkçe</small>
+                </div>
+
+                <input
+                  type="radio"
+                  name="language"
+                  value="/images/turkey.png"
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                  }}
+                  defaultChecked={languageImg === "/images/turkey.png"}
                 />
-                Wingie.com <small>English</small>
-              </div>
-              <input
-                type="radio"
-                name="language"
-                value="/images/world.svg"
-                onChange={(e) => {
-                  setLang(e.target.value);
+              </li>
+              <li className="language__list-item">
+                <div className="language__list-item-left">
+                  <img
+                    className="language__image"
+                    src="/images/de.svg"
+                    alt=""
+                  />
+                  Wingie.de <small>Deutsch</small>
+                </div>
+                <input
+                  type="radio"
+                  name="language"
+                  value="/images/de.svg"
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                  }}
+                  defaultChecked={languageImg === "/images/de.svg"}
+                />
+              </li>
+              <li className="language__list-item">
+                <div className="language__list-item-left">
+                  <img
+                    className="language__image"
+                    src="/images/gb.svg"
+                    alt=""
+                  />
+                  Wingie.co.uk <small>English</small>
+                </div>
+                <input
+                  type="radio"
+                  name="language"
+                  value="/images/gb.svg"
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                  }}
+                  defaultChecked={languageImg === "/images/gb.svg"}
+                />
+              </li>
+              <li className="language__list-item">
+                <div className="language__list-item-left">
+                  <img
+                    className="language__image"
+                    src="/images/world.svg"
+                    alt=""
+                  />
+                  Wingie.com <small>English</small>
+                </div>
+                <input
+                  type="radio"
+                  name="language"
+                  value="/images/world.svg"
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                  }}
+                  defaultChecked={languageImg === "/images/world.svg"}
+                />
+              </li>
+              <li className="language__list-item">
+                <div className="language__list-item-left">
+                  <img
+                    className="language__image"
+                    src="/images/es.svg"
+                    alt=""
+                  />
+                  Wingie.es <small>Español</small>
+                </div>
+                <input
+                  type="radio"
+                  name="language"
+                  value="/images/es.svg"
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                  }}
+                  defaultChecked={languageImg === "/images/es.svg"}
+                />
+              </li>
+              <li className="language__list-item">
+                <div className="language__list-item-left">
+                  <img
+                    className="language__image"
+                    src="/images/ae.svg"
+                    alt=""
+                  />
+                  Wingie.ae <small>العربية</small>
+                </div>
+                <input
+                  type="radio"
+                  name="language"
+                  value="/images/ae.svg"
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                  }}
+                  defaultChecked={languageImg === "/images/ae.svg"}
+                />
+              </li>
+              <li className="language__list-item">
+                <div className="language__list-item-left">
+                  <img
+                    className="language__image"
+                    src="/images/ru.svg"
+                    alt=""
+                  />
+                  ru.wingie.com <small>русский</small>
+                </div>
+                <input
+                  type="radio"
+                  name="language"
+                  value="/images/ru.svg"
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                  }}
+                  defaultChecked={languageImg === "/images/ru.svg"}
+                />
+              </li>
+            </ul>
+            <div className="language__bottom">
+              <button
+                className="language__bottom-cancel"
+                onClick={() => {
+                  setLanguagePopup(false);
                 }}
-              />
-            </li>
-            <li className="language__list-item">
-              <div className="language__list-item-left">
-                <img className="language__image" src="/images/es.svg" alt="" />
-                Wingie.es <small>Español</small>
-              </div>
-              <input
-                type="radio"
-                name="language"
-                value="/images/es.svg"
-                onChange={(e) => {
-                  setLang(e.target.value);
+              >
+                İptal
+              </button>
+              <button
+                className="language__bottom-confirm"
+                onClick={() => {
+                  setLanguagePopup(false);
+                  setLanguageImg(lang);
                 }}
-              />
-            </li>
-            <li className="language__list-item">
-              <div className="language__list-item-left">
-                <img className="language__image" src="/images/ae.svg" alt="" />
-                Wingie.ae <small>العربية</small>
-              </div>
-              <input
-                type="radio"
-                name="language"
-                value="/images/ae.svg"
-                onChange={(e) => {
-                  setLang(e.target.value);
-                }}
-              />
-            </li>
-            <li className="language__list-item">
-              <div className="language__list-item-left">
-                <img className="language__image" src="/images/ru.svg" alt="" />
-                ru.wingie.com <small>русский</small>
-              </div>
-              <input
-                type="radio"
-                name="language"
-                value="/images/ru.svg"
-                onChange={(e) => {
-                  setLang(e.target.value);
-                }}
-              />
-            </li>
-          </ul>
-          <div className="language__bottom">
-            <button
-              className="language__bottom-cancel"
-              onClick={() => {
-                setLanguagePopup(false);
-              }}
-            >
-              İptal
-            </button>
-            <button
-              className="language__bottom-confirm"
-              onClick={() => {
-                setLanguagePopup(false);
-                setLanguageImg(lang);
-              }}
-            >
-              Uygula
-            </button>
+              >
+                Uygula
+              </button>
+            </div>
           </div>
         </div>
       )}
