@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    .axess {
+        width: 90%;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .axess {
+        display: none;
+    }
+}
