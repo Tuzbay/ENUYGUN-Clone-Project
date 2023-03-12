@@ -1,11 +1,8 @@
 .brand {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 16px;
-    margin-top: 30px;
-
-
+    max-width: 1124px;
+    margin: 30px auto;
 }
 
 .brandSingle {
@@ -104,4 +101,59 @@
 
 .brandSingle:nth-child(6):hover span {
     color: rgb(234, 166, 26)
+}
+
+@media (max-width: 1200px) {
+    .brand {
+        max-width: 950px;
+        gap: 10px;
+    }
+
+    .brandSingle {
+        width: 160px;
+        height: 80px;
+    }
+
+    .brandSingle__box {
+        gap: 1px;
+    }
+
+    .brandSingle:nth-child(2) .brandSingle__box p {
+        font-size: 14px;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 1000px) {
+    .brand {
+        max-width: 720px;
+    }
+
+    .brandSingle {
+        width: 180px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand {
+        max-width: 520px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .brandSingle {
+        width: 180px;
+        height: 80px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+    .brand {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
