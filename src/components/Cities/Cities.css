@@ -23,19 +23,6 @@
     margin-bottom: 30px;
 }
 
-/* @media screen and (max-width: 1200px) {
-     .cities__single {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    } 
-
-    .cities {
-        max-width: 60%;
-        margin: 0 auto;
-    }
-
-
-} */
-
 @media (max-width: 1200px) {
     .cities {
         max-width: 950px;
@@ -60,8 +47,6 @@
     }
 
     .cities {
-        margin: 0 10px;
+        margin: 0 20px;
     }
 }
-
-@media (max-width: 378px) {}

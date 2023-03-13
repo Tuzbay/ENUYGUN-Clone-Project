@@ -67,3 +67,34 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
+
+@media (max-width: 1200px) {
+    .singleBlog {
+        width: 310px;
+        height: 100%;
+    }
+
+    .blog__left-bottom {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+
+    .blog__left-bottom {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .singleBlog {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}
+
+@media (max-width: 378px) {}
