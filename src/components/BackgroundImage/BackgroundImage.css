@@ -1,16 +1,23 @@
 .backgroundImage {
     position: relative;
     width: 100%;
+    color: white;
 }
 
 .backgroundImage img {
     height: 475px;
 }
 
-.frontPart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    gap: 50px;
+.frontDeneme {
+    position: absolute;
+    bottom: 380px;
+    background-color: red;
+    width: 1520px;
+}
+
+
+@media (max-width: 1400px) {
+    .frontDeneme {
+        width: 1320px;
+    }
 }

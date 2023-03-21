@@ -7,11 +7,11 @@ function BackgroundImage() {
   return (
     <div className="backgroundImage">
       <img src="/images/45196.jpeg" alt="" />
-      <div className="frontPart">
-        <div className="frontPart__left">
+      <div className="frontDeneme">
+        <div className="left">
           <FindTicket />
         </div>
-        <div className="frontPart__right">
+        <div className="right">
           <Slider />
         </div>
       </div>

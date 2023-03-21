@@ -24,7 +24,7 @@ function FindTicket() {
           <div className="findTicket__desc-top-item">
             <label>Nereye</label>
             <input type="text" placeholder="Şehir veya Havalimanı Yazın" />
-            <LocationOnIcon className="location" />
+            {/* <LocationOnIcon className="location" /> */}
           </div>
         </div>
         <div className="findTicket__desc-middle">

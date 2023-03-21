@@ -8,6 +8,7 @@ import Cities from "../components/Cities/Cities";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import Info from "../components/Info/Info";
+import FindTicket from "../components/FindTicket/FindTicket";
 
 function Home() {
   return (

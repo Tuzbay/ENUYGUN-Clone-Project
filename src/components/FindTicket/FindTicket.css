@@ -1,10 +1,9 @@
 .findTicket {
-    width: fit-content;
-    height: 290px;
+    width: 560px;
+    height: 300px;
     background-color: white;
     position: absolute;
-    bottom: 24%;
-    left: 20%;
+    left: 13%;
     border-radius: 4px;
     color: rgb(83, 96, 94);
 }
@@ -50,7 +49,7 @@
 .findTicket__desc-middle input,
 .findTicket__desc-bottom input {
     height: 38px;
-    width: 240px;
+    width: 220px;
     padding: 0 10px;
     outline-color: lightblue;
 }
@@ -82,14 +81,18 @@
 
 .cheap-button:hover {
     background-color: #22a73f;
-
 }
 
-
-.location {
+/* .location {
     position: absolute;
     top: 84px;
     right: 20px;
     color: #2DC44D;
     font-size: 22px;
+} */
+
+@media (max-width: 1400px) {
+    .findTicket {
+        left: 9%;
+    }
 }
