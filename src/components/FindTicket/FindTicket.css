@@ -6,6 +6,8 @@
     left: 13%;
     border-radius: 4px;
     color: rgb(83, 96, 94);
+    z-index: 1;
+    transform: .2s ease all;
 }
 
 .findTicket__options {
@@ -95,4 +97,49 @@
     .findTicket {
         left: 9%;
     }
+}
+
+/* ! Otel ! */
+
+.otel__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    transform: .2s ease all;
+}
+
+.otel__wrapper-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.otel__wrapper-bottom {
+    display: flex;
+    gap: 20px;
+}
+
+.otel__wrapper-bottom input {
+    flex: 3;
+}
+
+.otel__wrapper input::placeholder {
+    padding: 20px;
+    font-size: 18px;
+}
+
+.otel__wrapper-bottom button {
+    flex: 1;
+    background-color: #2DC44D;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+}
+
+.otel__input {
+    height: 58px;
+    width: 100%;
 }
