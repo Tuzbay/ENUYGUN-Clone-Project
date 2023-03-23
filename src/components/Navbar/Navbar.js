@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -18,6 +18,7 @@ function Navbar() {
   const [lang, setLang] = useState("");
   const [passwordType, setPasswordType] = useState("Password");
   const [passwordInput, setPasswordInput] = useState("");
+  const [topBar, setTopBar] = useState(false);
 
   const handlePasswordChange = (e) => {
     setPasswordInput(e.target.value);
@@ -31,6 +32,24 @@ function Navbar() {
       setPasswordType("password");
     }
   };
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY; // => scroll position
+    if (scrollPosition >= 500) {
+      setTopBar(true);
+    } else {
+      setTopBar(false);
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -428,6 +447,40 @@ function Navbar() {
               </button>
             </div>
           </div>
+        </div>
+      )}
+      {topBar && (
+        <div className="scrollTop">
+          <div>
+            <label>Nereden</label>
+            <input className="input" placeholder="Esenboğa Havaalanı" />
+          </div>
+          <div>
+            <label>Nereye</label>
+            <input className="input" placeholder="İstanbul (Tümü) Havaalanı" />
+          </div>
+          <div>
+            <label>Gidiş Tarihi</label>
+            <input className="input" placeholder="23 Mar 2023, Per" />
+          </div>
+          <div>
+            <div className="scrollTop-top">
+              <div>
+                <label>Dönüş Tarihi</label>
+              </div>
+              <div className="checkbox">
+                <input type="checkbox" />
+                <label>Tek Yön</label>
+              </div>
+            </div>
+            <input className="input" placeholder="23 Mar 2023, Per" />
+          </div>
+          <div>
+            <input type="checkbox" />
+            <label>Aktarmasız</label>
+            <input className="input" placeholder="1 Yolcu / Ekonomi" />
+          </div>
+          <button>Ucuz bilet bul </button>
         </div>
       )}
     </div>
