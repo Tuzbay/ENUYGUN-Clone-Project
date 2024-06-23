@@ -1,6 +1,6 @@
-import React from "react";
-import SingleBlog from "../SingleBlog/SingleBlog";
-import "./Blog.css";
+import React from 'react';
+import SingleBlog from '../SingleBlog/SingleBlog';
+import './Blog.css';
 
 function Blog() {
   return (
@@ -31,66 +31,24 @@ function Blog() {
       </div>
       <div className="blog__right">
         <h2>Uzman Yazıları</h2>
-        <div className="blog__right-item">
-          <div className="title">
-            <h3>Çatalca'daki piknik alanları</h3>
-          </div>
-          <div className="desc">
-            <img
-              src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=366&q=80"
-              alt=""
-            />
-            <div>
-              <p className="name">Bengüsu Özer</p>
-              <p className="date">8 Mart 2023</p>
+        {[...Array(4)].map((_, index) => (
+          <div className="blog__right-item">
+            <div className="title">
+              <h3>Çatalca'daki piknik alanları</h3>
+            </div>
+            <div className="desc">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Hamilton_1995.jpg"
+                alt=""
+              />
+              <div>
+                <p className="name">Margaret Hamilton</p>
+                <p className="date">8 Mart 2023</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="blog__right-item">
-          <div className="title">
-            <h3>Çatalca'daki piknik alanları</h3>
-          </div>
-          <div className="desc">
-            <img
-              src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=366&q=80"
-              alt=""
-            />
-            <div>
-              <p className="name">Bengüsu Özer</p>
-              <p className="date">8 Mart 2023</p>
-            </div>
-          </div>
-        </div>
-        <div className="blog__right-item">
-          <div className="title">
-            <h3>Çatalca'daki piknik alanları</h3>
-          </div>
-          <div className="desc">
-            <img
-              src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=366&q=80"
-              alt=""
-            />
-            <div>
-              <p className="name">Bengüsu Özer</p>
-              <p className="date">8 Mart 2023</p>
-            </div>
-          </div>
-        </div>
-        <div className="blog__right-item">
-          <div className="title">
-            <h3>Çatalca'daki piknik alanları</h3>
-          </div>
-          <div className="desc">
-            <img
-              src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=366&q=80"
-              alt=""
-            />
-            <div>
-              <p className="name">Bengüsu Özer</p>
-              <p className="date">8 Mart 2023</p>
-            </div>
-          </div>
-        </div>
+        ))}
+
         <button className="blog__right-btn">Tümünü gör</button>
       </div>
     </div>

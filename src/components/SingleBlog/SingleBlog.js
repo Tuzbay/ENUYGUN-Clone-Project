@@ -1,5 +1,5 @@
-import React from "react";
-import "./SingleBlog.css";
+import React from 'react';
+import './SingleBlog.css';
 
 function SingleBlog({ imageURL, title }) {
   return (
@@ -14,11 +14,11 @@ function SingleBlog({ imageURL, title }) {
 
       <div className="singleBlog__bottom">
         <img
-          src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=366&q=80"
+          src="https://upload.wikimedia.org/wikipedia/commons/6/68/Margaret_Hamilton_1995.jpg"
           alt=""
         />
         <div>
-          <p className="name">Bengüsu Özer</p>
+          <p className="name">Margaret Hamilton</p>
           <p className="date">8 Mart 2023</p>
         </div>
       </div>

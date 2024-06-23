@@ -1,35 +1,54 @@
-import React, { useEffect, useState } from "react";
-import "./Navbar.css";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import CloseIcon from "@mui/icons-material/Close";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-
+import React, { useEffect, useState } from 'react';
+import './Navbar.css';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import CloseIcon from '@mui/icons-material/Close';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import MenuIcon from '@mui/icons-material/Menu';
 function Navbar() {
   const [loginPopup, setLoginPopup] = useState(false);
   const [sigUpPopup, setSignUpPopup] = useState(false);
   const [languagePopup, setLanguagePopup] = useState(false);
-  const [languageImg, setLanguageImg] = useState("/images/turkey.png");
-  const [lang, setLang] = useState("");
-  const [passwordType, setPasswordType] = useState("Password");
-  const [passwordInput, setPasswordInput] = useState("");
+  const [languageImg, setLanguageImg] = useState('/images/turkey.png');
+  const [lang, setLang] = useState('');
+  const [passwordType, setPasswordType] = useState('Password');
+  const [passwordInput, setPasswordInput] = useState('');
   const [topBar, setTopBar] = useState(false);
+
+  const [menu, setMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1200) {
+        setMenu(true);
+      } else {
+        setMenu(false);
+      }
+    };
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handlePasswordChange = (e) => {
     setPasswordInput(e.target.value);
   };
 
   const togglePassword = () => {
-    if (passwordType === "password") {
-      setPasswordType("text");
+    if (passwordType === 'password') {
+      setPasswordType('text');
       return;
     } else {
-      setPasswordType("password");
+      setPasswordType('password');
     }
   };
 
@@ -44,61 +63,110 @@ function Navbar() {
 
   useEffect(() => {
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <div className="navbar">
+      {openMenu && (
+        <div className="hamburgerMenu">
+          <ul className="navbar__left-list navbar__left-list-hamburger">
+            <li className="item-hamburger">Uçak Bileti</li>
+            <li className=" item-hamburger">Otobüs Bileti</li>
+            <li className=" item-hamburger">Otel</li>
+            <li className="item-hamburger">Araç Kiralama</li>
+          </ul>
+          <div className="navbar__right navbar__right-hamburger">
+            <ul className="navbar__right-list navbar__right-list-hamburger">
+              <li
+                className="navbar__right-list-item-hamburger "
+                onClick={() => {
+                  setLoginPopup(true);
+                  setOpenMenu(false);
+                }}
+              >
+                Giriş Yap
+              </li>
+              <li
+                className="navbar__right-list-item-hamburger "
+                onClick={() => {
+                  setSignUpPopup(true);
+                  setOpenMenu(false);
+                }}
+              >
+                Üye Ol
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
+
       <div className="navbar__left">
         <img
           src="https://cdn2.enuygun.com/media/lib/uploads/image/logo-kaynagi-33816.jpeg"
           alt="ENUYGUN"
         />
-        <ul className="navbar__left-list">
-          <li className="navbar__left-list-item">Uçak Bileti</li>
-          <li className="navbar__left-list-item">Otobüs Bileti</li>
-          <li className="navbar__left-list-item">Otel</li>
-          <li className="navbar__left-list-item">Araç Kiralama</li>
-          <li className="navbar__left-list-item">
-            <MoreHorizIcon />
-          </li>
-        </ul>
+        {!menu && (
+          <ul className="navbar__left-list">
+            <li className="navbar__left-list-item">Uçak Bileti</li>
+            <li className="navbar__left-list-item">Otobüs Bileti</li>
+            <li className="navbar__left-list-item">Otel</li>
+            <li className="navbar__left-list-item">Araç Kiralama</li>
+            <li className="navbar__left-list-item">
+              <MoreHorizIcon />
+            </li>
+          </ul>
+        )}
       </div>
-      <div className="navbar__right">
-        <ul className="navbar__right-list">
-          <li className="navbar__right-list-item notification">
-            <NotificationsNoneIcon />
-          </li>
+
+      {menu ? (
+        <div className="navbar__right">
           <li
-            className="navbar__right-list-item"
-            onClick={() => {
-              setLanguagePopup(true);
-            }}
+            className="navbar__left-list-item"
+            onClick={() => setOpenMenu(!openMenu)}
           >
-            <img className="flag" src={languageImg} alt="" />
-            <KeyboardArrowDownIcon className="flagArrow" />
+            <MenuIcon />
           </li>
-          <li
-            className="navbar__right-list-item hover"
-            onClick={() => {
-              setLoginPopup(true);
-            }}
-          >
-            Giriş Yap
-          </li>
-          <li
-            className="navbar__right-list-item hover"
-            onClick={() => {
-              setSignUpPopup(true);
-            }}
-          >
-            Üye Ol
-          </li>
-        </ul>
-      </div>
+        </div>
+      ) : (
+        <>
+          <div className="navbar__right">
+            <ul className="navbar__right-list">
+              <li className="navbar__right-list-item notification">
+                <NotificationsNoneIcon />
+              </li>
+              <li
+                className="navbar__right-list-item"
+                onClick={() => {
+                  setLanguagePopup(true);
+                }}
+              >
+                <img className="flag" src={languageImg} alt="" />
+                <KeyboardArrowDownIcon className="flagArrow" />
+              </li>
+              <li
+                className="navbar__right-list-item hover"
+                onClick={() => {
+                  setLoginPopup(true);
+                }}
+              >
+                Giriş Yap
+              </li>
+              <li
+                className="navbar__right-list-item hover"
+                onClick={() => {
+                  setSignUpPopup(true);
+                }}
+              >
+                Üye Ol
+              </li>
+            </ul>
+          </div>
+        </>
+      )}
 
       {loginPopup && (
         <div className="background">
@@ -112,7 +180,7 @@ function Navbar() {
                 value={passwordInput}
                 placeholder="Şifre"
               />
-              {passwordType === "password" ? (
+              {passwordType === 'password' ? (
                 <VisibilityIcon
                   className="passwordIcon"
                   onClick={togglePassword}
@@ -233,7 +301,7 @@ function Navbar() {
                   value={passwordInput}
                   placeholder="Şifre"
                 />
-                {passwordType === "password" ? (
+                {passwordType === 'password' ? (
                   <VisibilityIcon
                     className="passwordIcon signUpPassIcon"
                     onClick={togglePassword}
@@ -265,8 +333,8 @@ function Navbar() {
               </div>
               <div className="signUp__bottom-desc">
                 <p>
-                  Kişisel verileriniz <strong>Aydınlatma Metni</strong>{" "}
-                  kapsamında işleniyor. Üye olarak{" "}
+                  Kişisel verileriniz <strong>Aydınlatma Metni</strong>{' '}
+                  kapsamında işleniyor. Üye olarak{' '}
                   <strong>Enuygun Kullanım Koşulları</strong>
                   'nı kabul ettiğinizi onaylamış olursunuz.
                 </p>
@@ -309,7 +377,7 @@ function Navbar() {
                   onChange={(e) => {
                     setLang(e.target.value);
                   }}
-                  defaultChecked={languageImg === "/images/turkey.png"}
+                  defaultChecked={languageImg === '/images/turkey.png'}
                 />
               </li>
               <li className="language__list-item">
@@ -328,7 +396,7 @@ function Navbar() {
                   onChange={(e) => {
                     setLang(e.target.value);
                   }}
-                  defaultChecked={languageImg === "/images/de.svg"}
+                  defaultChecked={languageImg === '/images/de.svg'}
                 />
               </li>
               <li className="language__list-item">
@@ -347,7 +415,7 @@ function Navbar() {
                   onChange={(e) => {
                     setLang(e.target.value);
                   }}
-                  defaultChecked={languageImg === "/images/gb.svg"}
+                  defaultChecked={languageImg === '/images/gb.svg'}
                 />
               </li>
               <li className="language__list-item">
@@ -366,7 +434,7 @@ function Navbar() {
                   onChange={(e) => {
                     setLang(e.target.value);
                   }}
-                  defaultChecked={languageImg === "/images/world.svg"}
+                  defaultChecked={languageImg === '/images/world.svg'}
                 />
               </li>
               <li className="language__list-item">
@@ -385,7 +453,7 @@ function Navbar() {
                   onChange={(e) => {
                     setLang(e.target.value);
                   }}
-                  defaultChecked={languageImg === "/images/es.svg"}
+                  defaultChecked={languageImg === '/images/es.svg'}
                 />
               </li>
               <li className="language__list-item">
@@ -404,7 +472,7 @@ function Navbar() {
                   onChange={(e) => {
                     setLang(e.target.value);
                   }}
-                  defaultChecked={languageImg === "/images/ae.svg"}
+                  defaultChecked={languageImg === '/images/ae.svg'}
                 />
               </li>
               <li className="language__list-item">
@@ -423,7 +491,7 @@ function Navbar() {
                   onChange={(e) => {
                     setLang(e.target.value);
                   }}
-                  defaultChecked={languageImg === "/images/ru.svg"}
+                  defaultChecked={languageImg === '/images/ru.svg'}
                 />
               </li>
             </ul>
@@ -451,36 +519,20 @@ function Navbar() {
       )}
       {topBar && (
         <div className="scrollTop">
-          <div>
-            <label>Nereden</label>
-            <input className="input" placeholder="Esenboğa Havaalanı" />
-          </div>
-          <div>
-            <label>Nereye</label>
-            <input className="input" placeholder="İstanbul (Tümü) Havaalanı" />
-          </div>
-          <div>
-            <label>Gidiş Tarihi</label>
-            <input className="input" placeholder="23 Mar 2023, Per" />
-          </div>
-          <div>
-            <div className="scrollTop-top">
-              <div>
-                <label>Dönüş Tarihi</label>
-              </div>
-              <div className="checkbox">
-                <input type="checkbox" />
-                <label>Tek Yön</label>
-              </div>
-            </div>
-            <input className="input" placeholder="23 Mar 2023, Per" />
-          </div>
-          <div>
-            <input type="checkbox" />
+          <div className="checkbox">
             <label>Aktarmasız</label>
-            <input className="input" placeholder="1 Yolcu / Ekonomi" />
+            <input type="checkbox" />
+            <label>Tek Yön</label>
+            <input type="checkbox" />
           </div>
-          <button>Ucuz bilet bul </button>
+          <div className="inputArea">
+            <input className="input" placeholder="Nereden" />
+            <input className="input" placeholder="Nereye" />
+            <input className="input" placeholder="Gidiş Tarihi" />
+            <input className="input" placeholder="Dönüş Tarihi" />
+            <input className="input" placeholder="1 Yolcu / Ekonomi" />
+            <button>Ucuz bilet bul </button>
+          </div>
         </div>
       )}
     </div>
